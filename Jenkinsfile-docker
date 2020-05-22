@@ -11,9 +11,9 @@ node {
         sh 'mvn clean install'  
     }
     stage('Docker Build'){
-        sh 'docker build -f Dockerfile -t productService .'  
+        sh 'docker build -f Dockerfile -t product-service .'  
     }
     stage('Docker Deploy') {
-        sh 'docker run -p 8085:4201 productService'          
+        sh 'docker run -p 8085:4201 product-service'          
     }
 }
